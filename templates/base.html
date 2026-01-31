@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_self">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Computer Force{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Computer Force - Your trusted source for computers, components, and peripherals{% endblock %}">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="{% static 'js/site.js' %}" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER: logo only (per spec) -->
+  <header class="site-header" aria-label="Header">
+    <div class="container header-inner">
+      <a href="{% url 'core:home' %}" class="logo" aria-label="Computer Force Home">
+        <img src="{% static 'img/logo.png' %}" alt="Computer Force logo" class="logo-img">
+        <span class="logo-text">Computer Force</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MENU BAR: links (left) + search (right). Mobile: burger/bag controls -->
+  <section class="site-menu" aria-label="Menu">
+    <div class="container menu-inner">
+
+      <!-- Mobile controls (<=600px only via CSS) -->
+      <button
+        class="icon-btn icon-btn--burger"
+        id="burgerBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="mobileMenuPanel"
+        aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- Desktop nav -->
+      <nav class="menu-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="{% url 'core:products' %}">Products</a></li>
+          <li><a href="{% url 'accounts:register' %}">Register</a></li>
+          <li><a href="{% url 'core:about' %}">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desktop search -->
+      <form class="menu-search" action="{% url 'core:products' %}" method="get" role="search">
+        <label class="sr-only" for="site-search-desktop">Search products</label>
+        <input id="site-search-desktop" type="text" name="q" placeholder="Search..." autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <button
+        class="icon-btn icon-btn--bag"
+        id="bagBtn"
+        type="button"
+        aria-label="Open purchases"
+        aria-controls="cartDrawer"
+        aria-expanded="false">
+        👜 <span class="cart-badge" aria-label="Items in cart">2</span>
+      </button>
+    </div>
+
+    <!-- Mobile panel: menu + search (hidden by default; shown by JS) -->
+    <div class="mobile-panel" id="mobileMenuPanel" hidden>
+      <div class="container mobile-panel-inner">
+        <nav class="menu-nav" aria-label="Mobile navigation">
+          <ul>
+            <li><a href="{% url 'core:products' %}">Products</a></li>
+            <li><a href="{% url 'accounts:register' %}">Register</a></li>
+            <li><a href="{% url 'core:about' %}">About</a></li>
+          </ul>
+        </nav>
+
+        <form class="menu-search" action="{% url 'core:products' %}" method="get" role="search">
+          <label class="sr-only" for="site-search-mobile">Search products</label>
+          <input id="site-search-mobile" type="text" name="q" placeholder="Search..." autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUT: main (80%) + aside (20%) on desktop; mobile stacks -->
+  <div class="page-shell">
+    <div class="container layout">
+      <main id="main" class="site-main">
+        {% block content %}{% endblock %}
+      </main>
+
+      <!-- Desktop aside -->
+      <aside class="site-aside" aria-label="Purchases">
+
+        <!-- Purchases card -->
+        <div class="aside-card">
+          <h2>Purchases</h2>
+
+          <table class="purchase-table" aria-label="Purchases table">
+            <tbody>
+              <tr><td>Test Item 1</td><td class="price-col">$1000</td></tr>
+              <tr><td>Test Item 2</td><td class="price-col">$500</td></tr>
+              <tr class="purchase-total"><td>Total</td><td class="price-col">$1500</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Checkout bar (goes BELOW purchases) -->
+        <button class="checkout-bar" type="button">Go to Checkout</button>
+
+      </aside>      
+    </div>
+  </div>
+
+  <!-- Mobile purchases drawer -->
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" hidden aria-label="Purchases drawer">
+    <div class="cart-drawer__head">
+      <h2 class="cart-drawer__title">Purchases</h2>
+      <button class="icon-btn icon-btn--close" id="closeDrawerBtn" type="button" aria-label="Close purchases">✕</button>
+    </div>
+
+    <div class="cart-drawer__body">
+      <table class="purchase-table" aria-label="Purchases table (mobile)">
+        <tbody>
+          <tr><td>Test Item 1</td><td class="price-col">$1000</td></tr>
+          <tr><td>Test Item 2</td><td class="price-col">$500</td></tr>
+          <tr class="purchase-total"><td>Total</td><td class="price-col">$1500</td></tr>
+        </tbody>
+      </table>
+
+      <button class="btn btn-checkout" type="button">Go to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container">
+      <p class="footer-copy">&copy; 2026 Adrian Posada</p>
+    </div>
+  </footer>  
+</body>
+</html>

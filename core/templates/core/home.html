@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - Computer Force{% endblock %}
+{% block meta_description %}Welcome to Computer Force{% endblock %}
+
+{% block content %}
+<div class="home-page">
+
+  <!-- Hero wireframe box -->
+  <section class="home-hero" aria-label="Hero">
+    <div class="home-hero__inner">
+      <h1 class="home-hero__title">Welcome to Computer Force</h1>
+      <p class="home-hero__subtitle">
+        Computer Force is your online expert in all things computing.
+      </p>
+    </div>
+  </section>
+  
+  <!-- 8 categories (wireframe grid 4x2 desktop, 2 cols mobile) -->
+  <section aria-label="Main product categories">
+    <div class="category-grid">
+
+      <a class="category-tile" href="{% url 'core:products' %}#computers">
+        <div class="category-tile__img">
+          <img src="{% static 'img/computers.png' %}" alt="Computers category image">
+        </div>
+        <div class="category-tile__label">Computers</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#laptops">
+        <div class="category-tile__img">
+          <img src="{% static 'img/laptops.png' %}" alt="Laptops category image">
+        </div>
+        <div class="category-tile__label">Laptops</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#monitors">
+        <div class="category-tile__img">
+          <img src="{% static 'img/monitors.png' %}" alt="Monitors category image">
+        </div>
+        <div class="category-tile__label">Monitors</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#tablets">
+        <div class="category-tile__img">
+          <img src="{% static 'img/tablets.png' %}" alt="Tablets category image">
+        </div>
+        <div class="category-tile__label">Tablets</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#audio">
+        <div class="category-tile__img">
+          <img src="{% static 'img/microphone.png' %}" alt="Audio category image">
+        </div>
+        <div class="category-tile__label">Audio</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#graphics">
+        <div class="category-tile__img">
+          <img src="{% static 'img/gpu.png' %}" alt="Graphics cards category image">
+        </div>
+        <div class="category-tile__label">Graphics cards</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#keyboard">
+        <div class="category-tile__img">
+          <img src="{% static 'img/keyboard.png' %}" alt="Keyboard and mice category image">
+        </div>
+        <div class="category-tile__label">Keyboard and mouse</div>
+      </a>
+
+      <a class="category-tile" href="{% url 'core:products' %}#software">
+        <div class="category-tile__img">
+          <img src="{% static 'img/software.png' %}" alt="Software category image">
+        </div>
+        <div class="category-tile__label">Software</div>
+      </a>
+
+    </div>
+  </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Products | Computer Force{% endblock %}
+{% block meta_description %}Browse products by category on Computer Force{% endblock %}
+
+{% block content %}
+  <h1>Products we sell</h1>
+  <p>Computer Force is your online expert in all things computing</p>
+
+  <section class="grid-2 product-grid" aria-label="Product categories">
+    <article class="card product-card" id="audio">
+      <h2>Audio</h2>
+      <img src="{% static 'img/microphone.png' %}" alt="Audio category image">
+    </article>
+
+    <article class="card product-card" id="computers">
+      <h2>Computers</h2>
+      <img src="{% static 'img/computers.png' %}" alt="Computers category image">
+    </article>
+
+    <article class="card product-card" id="graphics-cards">
+      <h2>Graphics cards</h2>
+      <img src="{% static 'img/gpu.png' %}" alt="Graphics cards category image">
+    </article>
+
+    <article class="card product-card" id="keyboard-mice">
+      <h2>Keyboards</h2>
+      <img src="{% static 'img/keyboard.png' %}" alt="Keyboard and mice category image">
+    </article>
+
+    <article class="card product-card" id="laptops">
+      <h2>Laptops</h2>
+      <img src="{% static 'img/laptops.png' %}" alt="Laptops category image">
+    </article>
+
+    <article class="card product-card" id="monitors">
+      <h2>Monitors</h2>
+      <img src="{% static 'img/monitors.png' %}" alt="Monitors category image">
+    </article>
+
+    <article class="card product-card" id="networking">
+      <h2>Networking</h2>
+      <img src="{% static 'img/network.png' %}" alt="Networking category image">
+    </article>
+
+    <article class="card product-card" id="peripherals">
+      <h2>Peripherals</h2>
+      <img src="{% static 'img/Peripherals.png' %}" alt="Peripherals category image">
+    </article>
+
+    <article class="card product-card" id="printing-scanning">
+      <h2>Printing &amp; scanning</h2>
+      <img src="{% static 'img/printers.png' %}" alt="Printing and scanning category image">
+    </article>
+
+    <article class="card product-card" id="software">
+      <h2>Software</h2>
+      <img src="{% static 'img/software.png' %}" alt="Software category image">
+    </article>
+
+    <article class="card product-card" id="storage">
+      <h2>Storage</h2>
+      <img src="{% static 'img/storage.png' %}" alt="Storage category image">
+    </article>
+
+    <article class="card product-card" id="tablets">
+      <h2>Tablets</h2>
+      <img src="{% static 'img/tablets.png' %}" alt="Tablets category image">
+    </article>
+  </section>
+{% endblock %}

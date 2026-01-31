@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About - Computer Force{% endblock %}
+{% block meta_description %}Learn about Computer Force: our story, what we do, and how we help customers choose the right tech.{% endblock %}
+
+{% block content %}
+<section class="about-page" aria-label="About Computer Force">
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <div class="about-hero__inner">
+
+      <div class="about-hero__left">
+        <span class="about-pill">Computer Force</span>
+
+        <h1 class="about-title">
+          ABOUT <span>US</span>
+        </h1>
+
+        <p class="about-lead">
+          We help people choose the right computers, components, and peripherals with confidence.
+          Reliable advice, curated products, and a straightforward shopping experience.
+        </p>
+
+        <div class="about-actions" aria-label="Quick actions">
+          <a class="about-link" href="{% url 'core:products' %}">Browse Products</a>
+          <a class="about-link" href="{% url 'accounts:register' %}">Create Account</a>
+        </div>
+
+        <div class="about-stats" aria-label="Highlights">
+          <article class="about-stat">
+            <div class="about-stat__value">20+</div>
+            <div class="about-stat__label">Years in tech retail</div>
+          </article>
+
+          <article class="about-stat">
+            <div class="about-stat__value">1,000+</div>
+            <div class="about-stat__label">Customers helped</div>
+          </article>
+
+          <article class="about-stat">
+            <div class="about-stat__value">Fast</div>
+            <div class="about-stat__label">Local delivery options</div>
+          </article>
+        </div>
+      </div>
+
+      <div class="about-hero__right" aria-label="About image">
+        <!-- Usa la imagen que ya tenías (o pon la ruta correcta en /static/img/) -->
+        <img
+          src="{% static 'img/tech_staff.png' %}"
+          alt="Computer Force team and workspace"
+          class="about-hero__img">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="about-content">
+    <h2>What we do</h2>
+    <p>
+      We focus on a clean, tech-store style experience: clear categories, simple navigation,
+      and product discovery that feels fast and modern.
+    </p>
+
+    <h2>Why customers choose us</h2>
+    <ul class="bullet">
+      <li>Curated range across computers, laptops, and peripherals</li>
+      <li>Clear, practical guidance without sales pressure</li>
+      <li>Simple checkout flow and transparent totals</li>
+    </ul>
+
+    <h2>Need help?</h2>
+    <p>
+      Visit our Products page to browse categories, or create an account to get started.
+    </p>
+  </div>
+
+</section>
+{% endblock %}
