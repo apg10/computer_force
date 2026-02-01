@@ -1,4 +1,4 @@
-# Computer Force (Django) — Assessment Website
+# Computer Force - Website
 
 Computer Force is a Django-based website built for the course case study/specification.  
 It includes a Home page, Products page, Registration page, and About page, with a responsive layout and static assets (CSS, images, JS).
