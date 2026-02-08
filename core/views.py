@@ -39,3 +39,6 @@ def products(request):
 
 def about(request):
     return render(request, "core/about.html")
+
+def developer_profile(request):
+    return render(request, "core/developer.html")

@@ -48,9 +48,11 @@
       <!-- Desktop nav -->
       <nav class="menu-nav" aria-label="Main navigation">
         <ul>
+          <li><a href="{% url 'core:home' %}">Home</a></li>
           <li><a href="{% url 'core:products' %}">Products</a></li>
           <li><a href="{% url 'accounts:register' %}">Register</a></li>
           <li><a href="{% url 'core:about' %}">About</a></li>
+          <li><a href="{% url 'core:developer' %}">Developer</a></li>
         </ul>
       </nav>
 
